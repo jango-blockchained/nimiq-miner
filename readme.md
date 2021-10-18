@@ -3,11 +3,12 @@
 This is a [Nimiq](https://nimiq.com) cryptocurrency miner.  Run it like
 
     $ docker run -d \
+        --cpus 20 \
         --name nimiq-miner \
         --mount 'type=volume,source=nimiq-miner,destination=/home/nimiq' \
         jpsecher/nimiq-miner \
-        --pool=pool.nimiq.watch:8443 \
-        --wallet-address=NQ6272GHCS6H3XL5L09SFGAM34MK7CU11JFE
+        --pool=pool.acemining.co:8443 \
+        --wallet-address=NQ97FM05GUG8LV8C2FNC4TEML176LVHNR02L
 
 Or start it with `docker-compose up -d`:
 
@@ -15,7 +16,7 @@ Or start it with `docker-compose up -d`:
     services:
       nimiq-miner:
         image: jpsecher/nimiq-miner
-        command: --wallet-address=NQ6272GHCS6H3XL5L09SFGAM34MK7CU11JFE
+        command: --wallet-address=NQ97FM05GUG8LV8C2FNC4TEML176LVHNR02L
         volumes:
           - nimiq-miner:/home/nimiq
         restart: on-failure

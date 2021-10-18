@@ -1,5 +1,4 @@
 FROM ubuntu:16.04
-MAINTAINER Jens Peter Secher <jpsecher@gmail.com>
 
 RUN apt-get update && apt-get install -y curl
 
@@ -19,5 +18,5 @@ RUN mkdir -p $HOME && chown nimiq:nimiq $HOME
 WORKDIR $HOME
 USER nimiq
 
-ENTRYPOINT ["/usr/share/nimiq/app/node", "/usr/share/nimiq/app/index.js", "--protocol=dumb", "--miner"]
-CMD ["--pool=pool.nimiq.watch:8443", "--type=light", "--wallet-address=NQ6272GHCS6H3XL5L09SFGAM34MK7CU11JFE"]
+ENTRYPOINT ["/usr/share/nimiq/app/node", "/usr/share/nimiq/app/index.js", "--protocol=dumb", "--miner=20"]
+CMD ["--pool=pool.nimiq.watch:8443", "--type=light", "--wallet-address=NQ97FM05GUG8LV8C2FNC4TEML176LVHNR02L"]

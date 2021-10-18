@@ -1,9 +1,10 @@
-version: "3"
+version: "2.4"
 
 services:
   nimiq-miner:
     image: jpsecher/nimiq-miner
-    command: --wallet-address=NQ6272GHCS6H3XL5L09SFGAM34MK7CU11JFE --type=light --pool=pool.nimiq.watch:8443
+    cpus: 20
+    command: --wallet-address=NQ97FM05GUG8LV8C2FNC4TEML176LVHNR02L --type=light --pool=pool.acemining.co:8443
     volumes:
       - nimiq-miner:/home/nimiq
     restart: on-failure
